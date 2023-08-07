@@ -69,10 +69,12 @@ def num_check(question):
     while True:
 
         try:
-            response = int(input(question))
-            if response > 0:
-                if response <= money:
-                    return response
+            response = input(question)
+            if response == "all":
+                return money
+            if int(response) > 0:
+                if int(response) <= money:
+                    return int(response)
                 else: print("You don't have that much money")
             else: print("You can't enter a negative number")
 
@@ -100,7 +102,9 @@ print()
 
 
 if string_checker(Color.YELLOW + "Do you want to read the instructions? (y/n): ", 1, yes_no_list) == "yes":
-    print(Color.BLUE + "Instructions go here")  # fill out instructions
+    print(Color.BLUE + "You have 3 days to spend a billion dollars.")  # fill out instructions
+    print("It's your goal to find a way to spend all billion dollars by either buying items, gambling, or donating")
+    print("Typing 'all' while gambling or donating will spend all your money in your account")
 
 print(Color.END)
 
